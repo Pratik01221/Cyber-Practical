@@ -1,0 +1,7 @@
+git clone https://github.com/StanGirard/SlowLoris-DDOS-Attack.gitcd SlowLoris-DDOS-Attack
+
+pip install -r requirements.txt
+
+cd src
+
+python3 main.py-aig I
